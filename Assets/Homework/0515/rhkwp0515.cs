@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerControler : MonoBehaviour
+public class rhkwp0515 : MonoBehaviour
 {
     private Vector3 moveDir;
     private Rigidbody rb;
-    public float movePower;
-    public float rotatePower;
-    public GameObject bulletPrefab;
-    public Transform bulletPoint;
-    public float repeatTime;
+    [SerializeField]
+    private float movePower;
+    [SerializeField]
+    private float rotatePower;
+    [SerializeField]
+    private GameObject bulletPrefab;
+    [SerializeField]
+    private Transform bulletPoint;
+    [SerializeField]
+    private Transform bulletPoint2;
+    [SerializeField]
+    private float repeatTime;
 
 
     private void Awake()
@@ -27,18 +33,18 @@ public class PlayerControler : MonoBehaviour
 
     public void Move()
     {
-        transform.Translate(Vector3.forward * moveDir.z * movePower * Time.deltaTime, Space.Self);
+        transform.Translate(Vector3.forward * moveDir.y * movePower * Time.deltaTime, Space.Self);
     }
     public void Rotate()
     {
-        transform.Rotate(Vector3.up, moveDir.x * rotatePower * Time.deltaTime, Space.Self);
+        transform.Rotate(Vector3.left, moveDir.x * rotatePower * Time.deltaTime, Space.Self);
     }
 
 
     public void OnMove(InputValue value)
     {
-        moveDir.x = value.Get<Vector2>().x; 
-        moveDir.z = value.Get<Vector2>().y;
+        moveDir.x = value.Get<Vector2>().x;
+        moveDir.y = value.Get<Vector2>().y;
         Debug.Log(moveDir);
     }
 
@@ -47,13 +53,15 @@ public class PlayerControler : MonoBehaviour
     private void OnFire(InputValue value)
     {
         Instantiate(bulletPrefab, bulletPoint.position, bulletPoint.rotation);
+        Instantiate(bulletPrefab, bulletPoint2.position, bulletPoint2.rotation);
     }
 
     IEnumerator BulletMakeRoutine()
     {
-        while(true)
+        while (true)
         {
             Instantiate(bulletPrefab, bulletPoint.position, bulletPoint.rotation);
+            Instantiate(bulletPrefab, bulletPoint2.position, bulletPoint2.rotation);
             yield return new WaitForSeconds(repeatTime);
         }
     }

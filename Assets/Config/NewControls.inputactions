@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "RapidFire",
+                    "type": "Value",
+                    "id": "711fcaf6-d92a-42f7-a5eb-d3ddbd5583d7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -158,11 +167,22 @@
                 {
                     "name": "",
                     "id": "bb5e17e2-afe3-4836-8b70-f48c3aa7ce08",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a77a2c55-fed9-4866-956f-cdcc0eb6746e",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RapidFire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
