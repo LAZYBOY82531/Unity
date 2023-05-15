@@ -9,8 +9,10 @@ public class PlayerControler : MonoBehaviour
     private Vector3 moveDir;
     private Rigidbody rb;
     public float movePower;
-    public float jumpPower;
     public float rotatePower;
+    public GameObject bulletPrefab;
+    public Transform bulletPoint;
+
 
     private void Awake()
     {
@@ -20,12 +22,6 @@ public class PlayerControler : MonoBehaviour
     {
         Move();
         Rotate();
-        //LookAt();
-        //Jump();
-    }
-    public void Jump()
-    {
-        rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
     }
 
     public void Move()
@@ -37,15 +33,6 @@ public class PlayerControler : MonoBehaviour
         transform.Rotate(Vector3.up, moveDir.x * rotatePower * Time.deltaTime, Space.Self);
     }
 
-    public void LookAt()
-    {
-        transform.LookAt(new Vector3(0, 0, 0));
-    }
-
-    public void Rotation()
-    {
-        
-    }
 
     public void OnMove(InputValue value)
     {
@@ -53,9 +40,9 @@ public class PlayerControler : MonoBehaviour
         moveDir.z = value.Get<Vector2>().y;
         Debug.Log(moveDir);
     }
-    public void OnJump(InputValue value)
+
+    private void OnFire(InputValue value)
     {
-        moveDir.y = value.Get<Vector3>().z;
-        Debug.Log(moveDir);
+        GameObject obj = Instantiate(bulletPrefab, bulletPoint.position, bulletPoint.rotation);
     }
 }
