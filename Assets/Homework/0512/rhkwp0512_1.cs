@@ -7,6 +7,8 @@ public class rhkwp0512_1 : MonoBehaviour
 {
     public float JP;
     Rigidbody rigidbody;
+
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();

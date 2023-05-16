@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 267508230}
   - component: {fileID: 267508229}
   - component: {fileID: 267508235}
+  - component: {fileID: 267508236}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -183,9 +184,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267508227}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.005
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -263,7 +264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267508227}
   m_LocalRotation: {x: -0.5000002, y: -0.49999982, z: 0.49999943, w: 0.5000006}
-  m_LocalPosition: {x: -3.387, y: 1.62, z: -4.628}
+  m_LocalPosition: {x: -3.57, y: 2.35, z: -2.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -289,7 +290,20 @@ MonoBehaviour:
   bulletPrefab: {fileID: 546768076173730327, guid: 7c8b7963cd4c5544eaaf132bd7309e23, type: 3}
   bulletPoint: {fileID: 1423033438}
   bulletPoint2: {fileID: 1104490310}
-  repeatTime: 0.1
+  repeatTime: 0.01
+--- !u!65 &267508236
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267508227}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2, z: 1.0000002}
+  m_Center: {x: 0.00000005960464, y: -1.776462e-15, z: -0.00000008940697}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

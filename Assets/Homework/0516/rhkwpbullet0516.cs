@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-
-public class Bullet : MonoBehaviour
+public class rhkwpbullet0516: MonoBehaviour
 {
     private Rigidbody rb;
 
-    [SerializeField] 
-    private float bulletSpeed;
     [SerializeField]
-    private GameObject boom;
+    private float BS;
+    [SerializeField]
+    private GameObject boomEppect;
     [SerializeField]
     private AudioSource boomAudio;
 
@@ -21,13 +19,12 @@ public class Bullet : MonoBehaviour
     }
     private void Start()
     {
-        rb.velocity = transform.forward * bulletSpeed;
+        rb.velocity = transform.forward * BS;
         Destroy(gameObject, 5f);
     }
-
     private void OnCollisionEnter(Collision collision)
     {
-        Instantiate(boom, transform.position, transform.rotation);
+        Instantiate(boomEppect, transform.position, transform.rotation);
         boomAudio.Play();
         Destroy(gameObject);
     }
