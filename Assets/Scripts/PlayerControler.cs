@@ -11,7 +11,7 @@ public class PlayerControler : MonoBehaviour
     public float movePower;
     public float rotatePower;
     public GameObject bulletPrefab;
-    public GameObject shootSound;
+    public AudioSource shootSound;
     public Transform bulletPoint;
     public float repeatTime;
 
@@ -48,7 +48,7 @@ public class PlayerControler : MonoBehaviour
     private void OnFire(InputValue value)
     {
         Instantiate(bulletPrefab, bulletPoint.position, bulletPoint.rotation);
-        Instantiate(shootSound, bulletPoint.position, bulletPoint.rotation);
+        shootSound.Play();
     }
 
     IEnumerator BulletMakeRoutine()
@@ -56,7 +56,7 @@ public class PlayerControler : MonoBehaviour
         while(true)
         {
             Instantiate(bulletPrefab, bulletPoint.position, bulletPoint.rotation);
-            Instantiate(shootSound, bulletPoint.position, bulletPoint.rotation);
+            shootSound.Play();
             yield return new WaitForSeconds(repeatTime);
         }
     }

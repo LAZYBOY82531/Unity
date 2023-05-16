@@ -15,6 +15,7 @@ public class rhkwpbullet0516: MonoBehaviour
 
     private void Awake()
     {
+        AudioSource boomAudio = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
     }
     private void Start()
@@ -22,10 +23,16 @@ public class rhkwpbullet0516: MonoBehaviour
         rb.velocity = transform.forward * BS;
         Destroy(gameObject, 5f);
     }
+
+    private void SoundPlay()
+    {
+        boomAudio.Play();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
+        SoundPlay();
         Instantiate(boomEppect, transform.position, transform.rotation);
-        boomAudio.Play();
         Destroy(gameObject);
     }
 }

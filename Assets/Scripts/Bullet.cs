@@ -12,8 +12,6 @@ public class Bullet : MonoBehaviour
     private float bulletSpeed;
     [SerializeField]
     private GameObject boom;
-    [SerializeField]
-    private AudioSource boomAudio;
 
     private void Awake()
     {
@@ -28,7 +26,6 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Instantiate(boom, transform.position, transform.rotation);
-        boomAudio.Play();
         Destroy(gameObject);
     }
 }

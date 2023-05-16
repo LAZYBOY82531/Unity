@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BS: 90
-  boomEppect: {fileID: 195792, guid: 89e78efe92dfe5a42837b392cdb0bf9e, type: 3}
+  boomEppect: {fileID: 195792, guid: f7e9373f35d2cd0429802652cd7549bf, type: 3}
   boomAudio: {fileID: 4237336948712117924}
 --- !u!1 &3500856331016832056
 GameObject:
