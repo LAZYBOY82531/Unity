@@ -14,6 +14,7 @@ public class PlayerControler : MonoBehaviour
     public AudioSource shootSound;
     public Transform bulletPoint;
     public float repeatTime;
+    public Animator animator;
 
 
     private void Awake()
@@ -45,18 +46,24 @@ public class PlayerControler : MonoBehaviour
 
     private Coroutine bulletRoutine;
 
-    private void OnFire(InputValue value)
+    public void Fire()
     {
         Instantiate(bulletPrefab, bulletPoint.position, bulletPoint.rotation);
         shootSound.Play();
+        animator.SetTrigger("Fire");
+
+    }
+
+    private void OnFire(InputValue value)
+    {
+        Fire();
     }
 
     IEnumerator BulletMakeRoutine()
     {
         while(true)
         {
-            Instantiate(bulletPrefab, bulletPoint.position, bulletPoint.rotation);
-            shootSound.Play();
+            Fire();
             yield return new WaitForSeconds(repeatTime);
         }
     }
