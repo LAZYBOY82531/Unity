@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1788801571335481669}
   - component: {fileID: 2966114905220625769}
   - component: {fileID: 3939801964775798406}
-  - component: {fileID: 6243452431455258615}
+  - component: {fileID: 8217771372437025002}
   m_Layer: 7
   m_Name: Shell
   m_TagString: Untagged
@@ -116,7 +116,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2987081, y: 0.29870814, z: 0.5252612}
   m_Center: {x: 0, y: 0.000000007450581, z: 0.19800001}
---- !u!114 &6243452431455258615
+--- !u!114 &8217771372437025002
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

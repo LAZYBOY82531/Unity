@@ -10,8 +10,6 @@ public class rhkwpbullet0516: MonoBehaviour
     private float BS;
     [SerializeField]
     private GameObject boomEppect;
-    [SerializeField]
-    private AudioSource boomAudio;
 
     private void Awake()
     {
@@ -24,14 +22,8 @@ public class rhkwpbullet0516: MonoBehaviour
         Destroy(gameObject, 5f);
     }
 
-    private void SoundPlay()
-    {
-        boomAudio.Play();
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
-        SoundPlay();
         Instantiate(boomEppect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
