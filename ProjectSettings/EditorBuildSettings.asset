@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Homework/0517/0517Main.unity
-    guid: 09b192d498a5f634bb3a469cb01266b8
+    path: Assets/Homework/0518/0518Main.unity
+    guid: c6f41130dca443c42bb324f93865d9b7
   - enabled: 1
-    path: Assets/Homework/0517/0517.unity
-    guid: e38cae05b5adec34baa1b23a473eca4c
+    path: Assets/Homework/0518/0518.unity
+    guid: c1133d43f81eaa94fa5b70ff33f6d672
   m_configObjects: {}
